@@ -1,8 +1,0 @@
-spring:
-  application:
-    name: ai-agent
-  ai:
-    openai:
-      api-key: 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
-    model:
-      chat: openai
