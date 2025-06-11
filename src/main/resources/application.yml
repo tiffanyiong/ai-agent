@@ -3,6 +3,9 @@ spring:
     name: ai-agent
   profiles:
     active: local
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY}
 server:
    port: 8123
    servlet:
