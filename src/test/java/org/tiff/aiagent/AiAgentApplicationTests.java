@@ -1,4 +1,4 @@
-package org.example.aiagent;
+package org.tiff.aiagent;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
