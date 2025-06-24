@@ -10,6 +10,7 @@ import org.springframework.ai.chat.memory.InMemoryChatMemory;
 import org.springframework.ai.chat.model.ChatModel;
 import org.springframework.ai.chat.model.ChatResponse;
 import org.springframework.ai.vectorstore.VectorStore;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.tiff.aiagent.advisor.MyLoggerAdvisor;
 
@@ -37,6 +38,10 @@ public class PhotoConsultApp {
 
     @Resource
     private final VectorStore photoAppVectorStore;
+
+    @Resource
+    @Qualifier("pgVectorVectorStore")
+    private VectorStore pgVectoreVectorStore;
 
     public PhotoConsultApp(ChatModel openAiChatModel, VectorStore photoAppVectorStore) {
         // init in memory storage
@@ -77,8 +82,10 @@ public class PhotoConsultApp {
                 .advisors(advisorSpec -> advisorSpec.param(CHAT_MEMORY_CONVERSATION_ID_KEY, chatId)
                         .param(CHAT_MEMORY_RETRIEVE_SIZE_KEY, 10))
                 .advisors(new MyLoggerAdvisor())
-                // use knowledge based question answer
-                .advisors(new QuestionAnswerAdvisor(photoAppVectorStore))
+                // use RAG knowledge based question answer
+                   .advisors(new QuestionAnswerAdvisor(photoAppVectorStore))
+                // use RAG based on PG Vector
+                .advisors(new QuestionAnswerAdvisor(pgVectoreVectorStore))
                 .call()
                 .chatResponse();
 

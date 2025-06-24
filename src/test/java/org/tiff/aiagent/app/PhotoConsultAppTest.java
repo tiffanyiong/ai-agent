@@ -64,4 +64,13 @@ class PhotoConsultAppTest {
         Assertions.assertNotNull(response);
 
     }
+
+    @Test
+    void testRAE_PgVector(){
+        String chatId = UUID.randomUUID().toString();
+        String message = "你好呀，我想咨詢約拍，請問怎麼收費？";
+        String response = photoConsultApp.doChatWithRag(message, chatId);
+        Assertions.assertNotNull(response);
+
+    }
 }
