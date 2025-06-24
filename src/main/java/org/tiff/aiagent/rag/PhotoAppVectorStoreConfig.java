@@ -19,13 +19,20 @@ public class PhotoAppVectorStoreConfig {
     @Resource
     private PhotoAppDocLoader photoAppDocLoader;
 
+    @Resource
+    private PhotoKeywordEnricher photoKeywordEnricher;
+
     @Bean
     VectorStore photoAppVectorStore(EmbeddingModel openAiEmbeddingModel) {
         SimpleVectorStore simpleVectorStore = SimpleVectorStore.builder(openAiEmbeddingModel)
                 .build();
         // load document
         List<Document> documents = photoAppDocLoader.loadMarkdowns();
-        simpleVectorStore.add(documents);
+
+        // use keyword enricher to add mroe metadata to the doc
+        List<Document> enrichedDocs = photoKeywordEnricher.enrichDocuments(documents);
+       //  simpleVectorStore.add(documents);
+        simpleVectorStore.add(enrichedDocs);
         return simpleVectorStore;
     }
 }
