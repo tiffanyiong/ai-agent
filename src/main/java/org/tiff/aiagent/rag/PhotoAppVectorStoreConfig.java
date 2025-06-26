@@ -29,10 +29,10 @@ public class PhotoAppVectorStoreConfig {
         // load document
         List<Document> documents = photoAppDocLoader.loadMarkdowns();
 
-        // use keyword enricher to add mroe metadata to the doc
-        List<Document> enrichedDocs = photoKeywordEnricher.enrichDocuments(documents);
-       //  simpleVectorStore.add(documents);
-        simpleVectorStore.add(enrichedDocs);
+        // use keyword enricher to add mor metadata to the doc
+  //      List<Document> enrichedDocs = photoKeywordEnricher.enrichDocuments(documents);
+  //      simpleVectorStore.add(documents);
+      //  simpleVectorStore.add(enrichedDocs);
         return simpleVectorStore;
     }
 }

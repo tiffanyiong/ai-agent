@@ -32,11 +32,14 @@ class PhotoAppDocLoader {
             Resource[] resources = resourcePatternResolver.getResources("classpath:knowledge-base/*.md");
             for (Resource resource : resources) {
                 String fileName = resource.getFilename();
+                assert fileName != null;
+                String style = fileName.contains("style") ? fileName.substring(9, fileName.lastIndexOf(".")) : null;
                 MarkdownDocumentReaderConfig config = MarkdownDocumentReaderConfig.builder()
                         .withHorizontalRuleCreateDocument(true)
                         .withIncludeCodeBlock(false)
                         .withIncludeBlockquote(false)
                         .withAdditionalMetadata("filename", fileName)
+                        .withAdditionalMetadata("style", style != null ? style : "")
                         .build();
                 MarkdownDocumentReader reader = new MarkdownDocumentReader(resource, config);
                 allDocuments.addAll(reader.get());
