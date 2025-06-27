@@ -1,5 +1,6 @@
 package org.tiff.aiagent.app;
 
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
@@ -8,6 +9,7 @@ import org.springframework.ai.chat.memory.ChatMemory;
 import org.springframework.ai.chat.memory.InMemoryChatMemory;
 import org.springframework.ai.chat.model.ChatModel;
 import org.springframework.ai.chat.model.ChatResponse;
+import org.springframework.ai.tool.ToolCallback;
 import org.springframework.stereotype.Component;
 import org.tiff.aiagent.advisor.MyLoggerAdvisor;
 import org.tiff.aiagent.advisor.ReReadingAdvisor;
@@ -93,5 +95,23 @@ public class RelationshipConsultApp {
 
         logger.info("report: {}", report);
         return report;
+    }
+
+    @Resource
+    private ToolCallback[]  allTools;
+
+    public String doChatWithTools(String message, String chatId) {
+        ChatResponse response = chatClient
+                .prompt()
+                .user(message)
+                .advisors(advisorSpec -> advisorSpec.param(CHAT_MEMORY_CONVERSATION_ID_KEY, chatId)
+                        .param(CHAT_MEMORY_CONVERSATION_ID_KEY, 10))
+                .advisors(new MyLoggerAdvisor())
+                .tools(allTools)
+                .call()
+                .chatResponse();
+        String content = response.getResult().getOutput().getText();
+        logger.info("content: {}", content);
+        return content;
     }
 }

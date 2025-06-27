@@ -47,4 +47,21 @@ class RelationshipConsultAppTest {
 
 
     }
+
+    @Test
+    void doChatWithTools() {
+
+        // 测试文件操作：保存用户档案
+        testMessage("我的名字是T, age 30, 保存我的恋爱档案为文件");
+
+        // 测试 PDF 生成
+        testMessage("生成一份2025年的‘七夕约会计划’PDF，包含餐厅预订、活动流程和礼物清单");
+    }
+
+    private void testMessage(String message) {
+        String chatId = UUID.randomUUID().toString();
+        String answer = relationshipConsultApp.doChatWithTools(message, chatId);
+        Assertions.assertNotNull(answer);
+    }
+
 }
