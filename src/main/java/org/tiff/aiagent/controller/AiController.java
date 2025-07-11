@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 import org.tiff.aiagent.agent.MockManus;
+import org.tiff.aiagent.app.PhotoConsultApp;
 import org.tiff.aiagent.app.RelationshipConsultApp;
 import reactor.core.publisher.Flux;
 
@@ -21,6 +22,9 @@ public class AiController {
 
     @Resource
     private RelationshipConsultApp relationshipConsultApp;
+
+    @Resource
+    PhotoConsultApp photoConsultApp;
 
     @Resource
     private ToolCallback[] allTools;
@@ -99,6 +103,17 @@ public class AiController {
     public SseEmitter doChatWithManus(String message){
        MockManus mockManus = new MockManus(allTools, openAiChatModel);
        return mockManus.runStream(message);
+    }
+
+    /**
+     * Photo Consult App - chat
+     * @param message
+     * @param chatId
+     * @return
+     */
+    @GetMapping(value = "/photo_consult/chat", produces =  MediaType.TEXT_EVENT_STREAM_VALUE)
+    public Flux<String> doChatWithPhotoApp(String message, String chatId){
+        return photoConsultApp.doChatWithToolsByStream(message, chatId);
     }
 
 

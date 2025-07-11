@@ -81,4 +81,25 @@ class PhotoConsultAppTest {
         String response = photoConsultApp.doChatWithRag(message, chatId);
         Assertions.assertNotNull(response);
     }
+
+    @Test
+    void doChatWithTools() {
+
+        testMessage("Hi, I wanna see if the photographer is available this Saturday? I wanna take a single photo in japanese style");
+
+        testMessage("what about next week?");
+
+        testMessage("I want to schedule with her next Friday at 5:30pm in San Jose");
+
+        testMessage("my name is Alex, and my phone number is 123-345-0123");
+
+    }
+
+    private void testMessage(String message) {
+        String chatId = UUID.randomUUID().toString();
+        String answer = photoConsultApp.doChatWithTools(message, chatId);
+        Assertions.assertNotNull(answer);
+    }
+
+
 }

@@ -16,10 +16,10 @@ public class SpringAiInvoke implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        AssistantMessage  assistantMessage = openAiChatModel.call(new Prompt("你好呀 我是第一次用spring AI"))
-                .getResult()
-                .getOutput();
-
-        System.out.println(assistantMessage.getText());
+//        AssistantMessage  assistantMessage = openAiChatModel.call(new Prompt("Hello World"))
+//                .getResult()
+//                .getOutput();
+//
+//        System.out.println(assistantMessage.getText());
     }
 }
