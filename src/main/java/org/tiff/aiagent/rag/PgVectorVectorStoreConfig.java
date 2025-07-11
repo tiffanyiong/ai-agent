@@ -19,7 +19,8 @@ public class PgVectorVectorStoreConfig {
     @Resource
     private PhotoAppDocLoader photoAppDocLoader;
 
-    @Bean
+    //@Bean
+    // TODO turn it off for now
     public VectorStore pgVectorVectorStore(JdbcTemplate jdbcTemplate, EmbeddingModel embeddingModel) {
         VectorStore vectorStore = PgVectorStore.builder(jdbcTemplate, embeddingModel)
                 .dimensions(1536)                    // Optional: defaults to model dimensions or 1536

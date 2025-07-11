@@ -1,10 +1,6 @@
 package org.tiff.aiagent.advisor;
 
-import java.util.function.Function;
-import java.util.logging.Logger;
 
-import lombok.extern.slf4j.Slf4j;
-import org.slf4j.LoggerFactory;
 import org.springframework.ai.chat.client.advisor.api.AdvisedRequest;
 import org.springframework.ai.chat.client.advisor.api.AdvisedResponse;
 import org.springframework.ai.chat.client.advisor.api.CallAroundAdvisor;

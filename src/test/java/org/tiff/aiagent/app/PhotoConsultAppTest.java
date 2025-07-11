@@ -80,6 +80,5 @@ class PhotoConsultAppTest {
         String message = "你好呀，我想咨詢約拍，想拍私房照可以嗎？";
         String response = photoConsultApp.doChatWithRag(message, chatId);
         Assertions.assertNotNull(response);
-
     }
 }

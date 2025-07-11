@@ -38,12 +38,12 @@ public class PhotoConsultApp {
             "如果客人確認了風格之後，請你從knowledge base的文件locations.md中, 按照客人所說的風格，找出幾個地點給客人選擇" +
             "跟其他和預約無關的事情一概說不清楚不知道，若客人沒問，不主動推薦任何東西，並主要核心要問想預約的時間";
 
-    @Resource
-    private final VectorStore photoAppVectorStore;
+//    @Resource
+//    private final VectorStore photoAppVectorStore;
 
-    @Resource
-    @Qualifier("pgVectorVectorStore")
-    private VectorStore pgVectorVectorStore;
+//    @Resource
+//    @Qualifier("pgVectorVectorStore")
+//    private VectorStore pgVectorVectorStore;
 
     public PhotoConsultApp(ChatModel openAiChatModel, VectorStore photoAppVectorStore) {
         // init in memory storage
@@ -57,7 +57,7 @@ public class PhotoConsultApp {
                         //   new ReReadingAdvisor()
                 )
                 .build();
-        this.photoAppVectorStore = photoAppVectorStore;
+      //  this.photoAppVectorStore = photoAppVectorStore;
     }
 
 
