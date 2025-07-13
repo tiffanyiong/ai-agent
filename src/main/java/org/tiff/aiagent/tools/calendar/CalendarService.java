@@ -7,6 +7,8 @@ import com.google.api.services.calendar.model.Event;
 import com.google.api.services.calendar.model.EventDateTime;
 import com.google.api.services.calendar.model.Events;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -24,7 +26,10 @@ import java.util.stream.Collectors;
 public class CalendarService {
 
     private final Calendar googleCalendarClient; // 透過依賴注入從 GoogleCalendarConfig 獲得
-    private final String calendarId = "primary"; // 使用主要日曆
+
+    @Value("${google.calendar.id}")
+    private String calendarId;
+
 
     /**
      * 查詢指定時間範圍內的忙碌時段

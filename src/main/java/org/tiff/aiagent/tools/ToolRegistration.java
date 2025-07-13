@@ -1,11 +1,9 @@
 package org.tiff.aiagent.tools;
 
-import jakarta.annotation.Resource;
 import org.springframework.ai.tool.ToolCallback;
 import org.springframework.ai.tool.ToolCallbacks;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.tiff.aiagent.tools.calendar.CalendarService;
 import org.tiff.aiagent.tools.calendar.CalendarTool;
 
 

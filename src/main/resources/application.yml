@@ -44,3 +44,7 @@ knife4j:
 pexels:
   api:
     key: ${YOUR_PEXELS_API_KEY}
+
+google:
+  calendar:
+    id: ${YOUR_CALENDAR_ID}

@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
 public class ImageSearchTool {
 
     @Value("${pexels.api.key}")
-    private String API_KEY = "aRk9u3PDlFIYb9w88mzopxh0AKCH1tyizJRzxvdwsWmZvH5vNPqmHI5l";
+    private String API_KEY;
 
     // Pexels API url
     private static final String API_URL = "https://api.pexels.com/v1/search";
