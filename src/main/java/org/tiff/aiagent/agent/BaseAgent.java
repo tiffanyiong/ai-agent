@@ -117,7 +117,7 @@ public abstract class BaseAgent {
             // save the result to the list
             List<String> results = new ArrayList<>();
             try{
-                for (int i = 0; i <maxSteps && this.state != AgentState.FINISHED; i++) {
+                for (int i = 0; i < maxSteps && this.state != AgentState.FINISHED; i++) {
                     int stepNumber = i + 1;
                     currentStep = stepNumber;
                     log.info(String.format("Executing step %d / %d", stepNumber, maxSteps));

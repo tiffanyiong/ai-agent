@@ -7,12 +7,10 @@
 > 注意：最终时间以自然光线条件为准，可能微调10-15分钟
 
 ## 预约流程
-1. 客户提供 **3个备选时间**（例如：6月25日 9:00/17:30/18:00）
+1. 客戶和AI進行簡單咨詢和預約日期
 2. 摄影师在 **24小时内** 确认最终时段并通知客户
 3. 确认后需支付 **$50定金** 锁定档期
 
-## 付款方式
-### 攝影師的zelle
-- FirstName: Wai
-- Email: tiffanyiong924@gmail.com
+- PhotographerFirstName: Tiffany
+- Email: {tiffanyiong924@gmail.com}
 
