@@ -6,6 +6,9 @@ The project consists of a Java Spring Boot backend that serves the AI logic and 
 
 **Live Demo:** [https://photo-ai-assitant.web.app](https://photo-ai-assitant.web.app)
 
+<img width="1117" height="760" alt="image" src="https://github.com/user-attachments/assets/c325240d-8a80-4799-b58f-4711a5d39f3c" />
+
+
 ---
 
 ## 🛠️ Technical Highlights
@@ -30,7 +33,6 @@ This project implements a wide range of advanced AI engineering concepts and tec
 
 The project follows a modern, scalable architecture that separates the frontend and backend concerns. The backend is built with Spring Boot and leverages Spring AI for seamless integration with Large Language Models. The frontend is a responsive React application.
 
-![AI Photography Assistant Backend Architecture](https://i.imgur.com/rV3Fwqy.png)
 
 ---
 
@@ -41,8 +43,6 @@ The project follows a modern, scalable architecture that separates the frontend 
 | **Backend** | `Java 21`, `Spring Boot 3`, `Spring AI`, `LangChain4j`, `RAG Pattern`, `PostgreSQL (with pgvector)`, `Google Calendar API`, `Maven`, `Docker`                                                                        |
 | **Frontend** | `React`, `Tailwind CSS`, `EventSource API (SSE)`                                                                                                                                                     |
 | **Deployment**| `Google Cloud Run`, `Google Cloud Build`, `Google Artifact Registry`, `Firebase Hosting`                                                                                                             |
-
-![Technology Stack](https://i.imgur.com/9aR4j0V.png)
 
 ---
 
