@@ -10,18 +10,27 @@ The project consists of a Java Spring Boot backend that serves the AI logic and 
 
 
 ---
+## ⭐ Features
+
+- **Conversational AI:** A friendly AI assistant to answer client questions about services, pricing, and availability.
+- **Knowledge Base Integration (RAG):** The assistant uses a **Vector Store** to create a knowledge base from documents like `locations.md` and pricing lists. When a client asks a specific question, the RAG pattern retrieves the most relevant information and provides it to the AI for a precise, fact-based answer.
+- **Google Calendar Integration:** The AI can check Tiffany's real-time availability by reading events from a designated Google Calendar.
+- **Appointment Management:** The AI is equipped with tools to create, update, and cancel photoshoot bookings directly on the calendar.
+- **Persistent Chat Sessions:** Client conversations are saved in the browser's `localStorage`, so the chat history is preserved even after refreshing the page.
+- **Streaming Responses:** AI responses are streamed to the frontend using Server-Sent Events (SSE) for a real-time "typewriter" effect.
+
+---
 
 ## 🛠️ Technical Highlights
 
 This project implements a wide range of advanced AI engineering concepts and technologies:
 
-* **AI Development Framework:** Leverages a powerful combination of **Spring AI** and **LangChain4j** to build a robust and scalable AI backend.
+* **AI Development Framework:** Leverages a powerful combination of **Spring AI** to build a robust and scalable AI backend.
 * **Advanced RAG Implementation:** Implements a sophisticated **Retrieval-Augmented Generation (RAG)** pipeline. This includes practical application of RAG principles and advanced tuning techniques to ensure the AI pulls from a specialized knowledge base for factually grounded answers.
 * **PgVector:** Utilizes **PostgreSQL with the `pgvector` extension** as a high-performance vector store, integrated with cloud database services for scalability and reliability.
 * **Autonomous Tool Calling:** The AI agent is designed with **Tool Calling** capabilities, allowing it to autonomously invoke external tools, such as the Google Calendar API, to perform actions and retrieve real-time information.
 * **Conversational Memory & State Management:** Implements core Spring AI features for managing **dialogue memory**, enabling natural, multi-turn conversations where context is preserved.
 * **Prompt Engineering & Optimization:** Applies advanced **prompt engineering** techniques to optimize the AI's performance, ensuring accurate and relevant responses.
-* **Structured Output:** Utilizes Spring AI's capabilities to generate **structured JSON output**, enabling reliable data exchange between the AI and other application components.
 * **AI Agent Development:** Explores the principles behind autonomous AI agents for more proactive assistant capabilities.
 * **Flexible Model Integration:** The architecture supports multiple methods for integrating with Large Language Models, including options for local deployment.
 * **Serverless & AI as a Service:** The backend is designed for modern cloud-native deployment, containerized with Docker and deployed as a **serverless** service on Google Cloud Run, embodying the "AI as a Service" paradigm.
@@ -29,18 +38,11 @@ This project implements a wide range of advanced AI engineering concepts and tec
 
 ---
 
-## 🏛️ Project Architecture
-
-The project follows a modern, scalable architecture that separates the frontend and backend concerns. The backend is built with Spring Boot and leverages Spring AI for seamless integration with Large Language Models. The frontend is a responsive React application.
-
-
----
-
 ## 💻 Tech Stack
 
 | Category     | Technology                                                                                                                                                                                           |
 | :----------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Backend** | `Java 21`, `Spring Boot 3`, `Spring AI`, `LangChain4j`, `RAG Pattern`, `PostgreSQL (with pgvector)`, `Google Calendar API`, `Maven`, `Docker`                                                                        |
+| **Backend** | `Java 21`, `Spring Boot 3`, `Spring AI`, `RAG Pattern`, `PostgreSQL (with pgvector)`, `Google Calendar API`, `Maven`, `Docker`                                                                        |
 | **Frontend** | `React`, `Tailwind CSS`, `EventSource API (SSE)`                                                                                                                                                     |
 | **Deployment**| `Google Cloud Run`, `Google Cloud Build`, `Google Artifact Registry`, `Firebase Hosting`                                                                                                             |
 
@@ -54,8 +56,6 @@ The project follows a modern, scalable architecture that separates the frontend 
 * Apache Maven
 * Node.js (v18 or higher recommended)
 * npm
-* Google Cloud CLI (`gcloud`)
-* Firebase CLI (`npm install -g firebase-tools`)
 
 ### Backend Setup
 
