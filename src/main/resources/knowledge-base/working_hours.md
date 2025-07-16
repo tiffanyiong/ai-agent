@@ -12,5 +12,5 @@
 3. 确认后需支付 **$50定金** 锁定档期
 
 - PhotographerFirstName: Tiffany
-- Email: {tiffanyiong924@gmail.com}
+- Email: {tiffany@test.com}
 
