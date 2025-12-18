@@ -4,7 +4,6 @@ This is a full-stack application featuring an AI-powered chatbot designed to act
 
 The project consists of a Java Spring Boot backend that serves the AI logic and a modern React frontend that provides a cute, energetic, and user-friendly chat interface.
 
-**Live Demo:** [https://photo-ai-assitant.web.app](https://photo-ai-assitant.web.app)
 
 <img width="1117" height="760" alt="image" src="https://github.com/user-attachments/assets/c325240d-8a80-4799-b58f-4711a5d39f3c" />
 
